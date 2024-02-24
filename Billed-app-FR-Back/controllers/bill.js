@@ -31,8 +31,8 @@ const create = async (req, res) => {
       commentary,
       status,
       commentAdmin,
-      fileName: isPicture(file.mimetype) ? file.originalname : 'null',
-      filePath: isPicture(file.mimetype) ? file.path : 'null',
+      fileName: isPicture(file.mimetype) ? file.originalname : false,
+      filePath: isPicture(file.mimetype) ? file.path : false,
       amount,
     });
     return res.status(201).json(bill);
