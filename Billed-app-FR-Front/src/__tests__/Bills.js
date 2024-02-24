@@ -25,7 +25,8 @@ describe("Given I am connected as an employee", () => {
       window.onNavigate(ROUTES_PATH.Bills)
       await waitFor(() => screen.getByTestId('icon-window'))
       const windowIcon = screen.getByTestId('icon-window')
-      //to-do write expect expression
+      //to-do write expect expression 
+       expect(windowIcon).toBeTruthy()
 
     })
     test("Then bills should be ordered from earliest to latest", () => {
@@ -35,5 +36,25 @@ describe("Given I am connected as an employee", () => {
       const datesSorted = [...dates].sort(antiChrono)
       expect(dates).toEqual(datesSorted)
     })
+
+    
+
+    // describe("When I click on the eye icon", () => {
+    //   test("A modal should open", () => {
+    //     document.body.innerHTML = BillsUI({ data: bills })
+    //     const onNavigate = (pathname) => {
+    //       document.body.innerHTML = ROUTES({ pathname })
+    //     }
+    //     const billsContainer = new Bills({
+    //       document, onNavigate, localStorage: window.localStorage, firestore: null,
+    //     })
+    //     $.fn.modal = jest.fn()
+    //     const eye = screen.getAllByTestId('icon-eye')[0]
+    //     const fireEvent = new Event('click')
+    //     const handleClickIconEye = jest.fn(billsContainer.handleClickIconEye(eye))
+    //     eye.addEventListener('click', handleClickIconEye)
+      
+    //   })
+    // })
   })
 })
