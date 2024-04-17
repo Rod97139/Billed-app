@@ -51,6 +51,7 @@ describe("Given I am connected as an employee", () => {
         document.body.innerHTML = ROUTES({ pathname })
       }
       const billsContainer = new Bills({document, onNavigate, localStorage: window.localStorage, store: null})
+      // mocker la fonction jQuery.fn.modal
       $.fn.modal = jest.fn()
       const handleClickIconEye = jest.fn(() => { billsContainer.handleClickIconEye })
       const eyeIcon = screen.getByTestId('icon-eye')
